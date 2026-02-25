@@ -1,0 +1,21 @@
+name: DevOps CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  system-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Show system info
+        run: |
+          echo "Pipeline running successfully"
+          uname -a
+          df -h
+          free -m
